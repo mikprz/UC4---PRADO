@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title%}
+            
+            {% endblock%}
+            | LP3 UC4
+        </title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    </head>
+    </head>
+    <body>
+        <header>
+            <div id="logotipo">
+        
+                <h1>UC4 - LP III</h1>
+            </div>
+        </header>
+        <nav>        
+            <ul>
+
+                <li>
+                    <a href="{% url 'cursos' %}">Listado de cursos</a>
+                </li>
+                <li>
+                    <a href="{% url 'crearCurso' %}">Agregar cursos</a>
+                </li>
+                <li>
+                    <a href="{% url 'carreras' %}">Listado carreras</a>
+                </li>
+                <li>
+                    <a href="{% url 'crearCarreras' %}">Agregar carreras </a>
+                </li>    
+            </ul>
+        </nav>        
+        <div class="barra">
+            <span class="esquina-izquierda"></span>
+            <span class="relleno-barra"></span>
+            <span class="esquina-derecha"></span>
+        </div>
+        <div id="content">
+            <div class="box">
+                
+                {% block content %}
+                    <strong> Contenido en layout </strong>
+                {% endblock %}
+            </div>
+        </div>
+        <footer>
+            UNTELS - Lenguaje de Programación III UC4 &copy;  {% now "d/m/Y h:m:s" %}
+        </footer>
+    </body>
+</html>
